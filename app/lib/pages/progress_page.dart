@@ -1,12 +1,10 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:common/common.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/dto/file_dto.dart';
-import 'package:localsend_app/model/file_status.dart';
-import 'package:localsend_app/model/session_status.dart';
 import 'package:localsend_app/provider/network/send_provider.dart';
 import 'package:localsend_app/provider/network/server/server_provider.dart';
 import 'package:localsend_app/provider/progress_provider.dart';
@@ -17,6 +15,7 @@ import 'package:localsend_app/util/file_speed_helper.dart';
 import 'package:localsend_app/util/native/open_file.dart';
 import 'package:localsend_app/util/native/open_folder.dart';
 import 'package:localsend_app/util/native/platform_check.dart';
+import 'package:localsend_app/util/native/taskbar_helper.dart';
 import 'package:localsend_app/util/ui/nav_bar_padding.dart';
 import 'package:localsend_app/widget/custom_progress_bar.dart';
 import 'package:localsend_app/widget/dialogs/cancel_session_dialog.dart';
@@ -116,6 +115,7 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
   void dispose() {
     super.dispose();
     _finishTimer?.cancel();
+    unawaited(TaskbarHelper.clearProgressBar());
     try {
       unawaited(WakelockPlus.disable());
     } catch (_) {}
@@ -163,6 +163,8 @@ class _ProgressPageState extends State<ProgressPage> with Refena {
     final progressNotifier = ref.watch(progressProvider);
     final currBytes = _files.fold<int>(
         0, (prev, curr) => prev + ((progressNotifier.getProgress(sessionId: widget.sessionId, fileId: curr.id) * curr.size).round()));
+
+    unawaited(TaskbarHelper.setProgressBar(currBytes, _totalBytes));
 
     final receiveSession = ref.watch(serverProvider.select((s) => s?.session));
     final sendSession = ref.watch(sendProvider)[widget.sessionId];

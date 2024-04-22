@@ -108,7 +108,12 @@
       "destination": "Hedef klasör",
       "downloads": "(İndirilenler)",
       "saveToGallery": "Medyayı galeriye kaydet",
-      "saveToHistory": "Geçmişe kaydet"
+      "saveToHistory": "Geçmişe kaydet",
+      "autoFinish": "Otomatik bitir"
+    },
+    "send": {
+      "title": "Gönder",
+      "shareViaLinkAutoAccept": "Link aracılığıyla paylaş: Otomatik olarak kabul et"
     },
     "network": {
       "title": "Ağ",
@@ -216,6 +221,7 @@
     "requests": "İstekler",
     "noRequests": "Henüz istek yok.",
     "encryption": "@:settingsTab.network.encryption",
+    "autoAccept": "İstekleri otomatik olarak kabul et",
     "encryptionHint": "LocalSend, tarayıcıda kabul etmeniz gereken kendi-üretimli bir sertifika kullanır.",
     "pendingRequests": "Bekleyen istekler: {n}"
   },

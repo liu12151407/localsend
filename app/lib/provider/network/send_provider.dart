@@ -2,18 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:common/common.dart';
 import 'package:dio/dio.dart';
 import 'package:localsend_app/model/cross_file.dart';
-import 'package:localsend_app/model/device.dart';
-import 'package:localsend_app/model/dto/file_dto.dart';
-import 'package:localsend_app/model/dto/info_register_dto.dart';
-import 'package:localsend_app/model/dto/multicast_dto.dart';
-import 'package:localsend_app/model/dto/prepare_upload_request_dto.dart';
-import 'package:localsend_app/model/dto/prepare_upload_response_dto.dart';
-import 'package:localsend_app/model/file_status.dart';
-import 'package:localsend_app/model/file_type.dart';
 import 'package:localsend_app/model/send_mode.dart';
-import 'package:localsend_app/model/session_status.dart';
 import 'package:localsend_app/model/state/send/send_session_state.dart';
 import 'package:localsend_app/model/state/send/sending_file.dart';
 import 'package:localsend_app/pages/home_page.dart';
@@ -290,7 +282,7 @@ class SendNotifier extends Notifier<Map<String, SendSessionState>> {
               'Content-Type': file.file.lookupMime(),
             },
           ),
-          data: file.path != null ? File(file.path!).openRead() : Stream.fromIterable([file.bytes!]),
+          data: file.path != null ? File(file.path!).openRead().asBroadcastStream() : file.bytes!,
           onSendProgress: (curr, total) {
             if (stopwatch.elapsedMilliseconds >= 100) {
               stopwatch.reset();

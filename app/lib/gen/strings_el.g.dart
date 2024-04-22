@@ -1,3 +1,9 @@
+///
+/// Generated file. Do not edit.
+///
+// coverage:ignore-file
+// ignore_for_file: type=lint
+
 part of 'strings.g.dart';
 
 // Path: <root>
@@ -42,6 +48,7 @@ class _StringsEl extends Translations {
 	@override late final _StringsTrayEl tray = _StringsTrayEl._(_root);
 	@override late final _StringsWebEl web = _StringsWebEl._(_root);
 	@override late final _StringsAssetPickerEl assetPicker = _StringsAssetPickerEl._(_root);
+	@override late final _StringsDonationPageEl donationPage = _StringsDonationPageEl._(_root);
 }
 
 // Path: general
@@ -132,8 +139,10 @@ class _StringsSettingsTabEl extends _StringsSettingsTabEn {
 	@override String get title => 'Ρυθμίσεις';
 	@override late final _StringsSettingsTabGeneralEl general = _StringsSettingsTabGeneralEl._(_root);
 	@override late final _StringsSettingsTabReceiveEl receive = _StringsSettingsTabReceiveEl._(_root);
+	@override late final _StringsSettingsTabSendEl send = _StringsSettingsTabSendEl._(_root);
 	@override late final _StringsSettingsTabNetworkEl network = _StringsSettingsTabNetworkEl._(_root);
 	@override String get advancedSettings => 'Προχωρημένες ρυθμίσεις';
+	@override late final _StringsSettingsTabOtherEl other = _StringsSettingsTabOtherEl._(_root);
 }
 
 // Path: troubleshootPage
@@ -263,6 +272,7 @@ class _StringsWebSharePageEl extends _StringsWebSharePageEn {
 	@override String get encryption => '${_root.settingsTab.network.encryption}';
 	@override String get encryptionHint => 'Το LocalSend χρησιμοποιεί αυτο-υπογεγραμμένο πιστοποιητικό. Χρειάζεται να το αποθεχτείτε στον φυλλομετρητή.';
 	@override String pendingRequests({required Object n}) => 'Αναμονή αιτημάτων: ${n}';
+	@override String get autoAccept => 'Αυτόματη αποδοχή αιτημάτων';
 }
 
 // Path: aboutPage
@@ -273,6 +283,13 @@ class _StringsAboutPageEl extends _StringsAboutPageEn {
 
 	// Translations
 	@override String get title => 'Σχετικά με το LocalSend';
+	@override List<String> get description => [
+		'Το LocalSend είναι μια δωρεάν εφαρμογή ανοιχτού κώδικα που σας επιτρέπει να μοιράζεστε με ασφάλεια αρχεία και μηνύματα με κοντινές συσκευές μέσω του τοπικού σας δικτύου χωρίς να χρειάζεστε σύνδεση στο διαδίκτυο.',
+		'Αυτή η εφαρμογή είναι διαθέσιμη σε Android, iOS, macOS, Windows και Linux. Μπορείτε να βρείτε όλες τις επιλογές λήψης στην επίσημη αρχική σελίδα.',
+	];
+	@override String get author => 'Δημιουργός';
+	@override String get contributors => 'Συντελεστές';
+	@override String get translators => 'Μεταφραστές';
 }
 
 // Path: changelogPage
@@ -457,6 +474,20 @@ class _StringsAssetPickerEl extends _StringsAssetPickerEn {
 	@override String get sUnitAssetCountLabel => 'μετρητής';
 }
 
+// Path: donationPage
+class _StringsDonationPageEl extends _StringsDonationPageEn {
+	_StringsDonationPageEl._(_StringsEl root) : this._root = root, super._(root);
+
+	@override final _StringsEl _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Δωρεά';
+	@override String get info => 'Το LocalSend είναι δωρεάν, ανοιχτού κώδικα και χωρίς διαφημίσεις. Εάν σας αρέσει η εφαρμογή, μπορείτε να υποστηρίξετε την ανάπτυξή της με μια δωρεά.';
+	@override String donate({required Object amount}) => 'Δωρεά ${amount}';
+	@override String get thanks => 'Ευχαριστούμε πολύ!';
+	@override String get restore => 'Ε[παναφορά αγοράς';
+}
+
 // Path: receiveTab.infoBox
 class _StringsReceiveTabInfoBoxEl extends _StringsReceiveTabInfoBoxEn {
 	_StringsReceiveTabInfoBoxEl._(_StringsEl root) : this._root = root, super._(root);
@@ -542,6 +573,18 @@ class _StringsSettingsTabReceiveEl extends _StringsSettingsTabReceiveEn {
 	@override String get downloads => '(Λήψεις)';
 	@override String get saveToGallery => 'Αποθήκευση μέσου στη συλλογή';
 	@override String get saveToHistory => 'Αποθήκευση στο ιστορικό';
+	@override String get autoFinish => 'Αυτόματη ολοκλήρωση';
+}
+
+// Path: settingsTab.send
+class _StringsSettingsTabSendEl extends _StringsSettingsTabSendEn {
+	_StringsSettingsTabSendEl._(_StringsEl root) : this._root = root, super._(root);
+
+	@override final _StringsEl _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Αποστολή';
+	@override String get shareViaLinkAutoAccept => 'Κοινοποίηση μέσω συνδέσμου: Αυτόματη αποδοχή';
 }
 
 // Path: settingsTab.network
@@ -562,6 +605,20 @@ class _StringsSettingsTabNetworkEl extends _StringsSettingsTabNetworkEn {
 	@override String get encryption => 'Κρυπτογράφηση';
 	@override String get multicastGroup => 'Αναμετάδοση';
 	@override String multicastGroupWarning({required Object defaultMulticast}) => 'Ενδέχεται να μην εντοπιστείτε από άλλες συσκευές επειδή χρησιμοποιείτε μια προσαρμοσμένη διεύθυνση αναμετάδοσης. (προεπιλογή: ${defaultMulticast})';
+}
+
+// Path: settingsTab.other
+class _StringsSettingsTabOtherEl extends _StringsSettingsTabOtherEn {
+	_StringsSettingsTabOtherEl._(_StringsEl root) : this._root = root, super._(root);
+
+	@override final _StringsEl _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Άλλα';
+	@override String get support => 'Υποστηρίξτε το LocalSend';
+	@override String get donate => 'Δωρεά';
+	@override String get privacyPolicy => 'Πολιτική Απορρήτου';
+	@override String get termsOfUse => 'Όροι Χρήσης';
 }
 
 // Path: troubleshootPage.firewall

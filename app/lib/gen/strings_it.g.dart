@@ -1,3 +1,9 @@
+///
+/// Generated file. Do not edit.
+///
+// coverage:ignore-file
+// ignore_for_file: type=lint
+
 part of 'strings.g.dart';
 
 // Path: <root>
@@ -77,7 +83,7 @@ class _StringsGeneralIt extends _StringsGeneralEn {
 	@override String get online => 'In linea';
 	@override String get open => 'Apri';
 	@override String get queue => 'Coda';
-	@override String get quickSave => 'Salva rapido';
+	@override String get quickSave => 'Salvataggio rapido';
 	@override String get renamed => 'Rinominato';
 	@override String get reset => 'Reset';
 	@override String get restart => 'Riavvia';
@@ -145,6 +151,7 @@ class _StringsSettingsTabIt extends _StringsSettingsTabEn {
 
 	// Translations
 	@override String get title => 'Impostazioni';
+	@override late final _StringsSettingsTabSendIt send = _StringsSettingsTabSendIt._(_root);
 	@override late final _StringsSettingsTabGeneralIt general = _StringsSettingsTabGeneralIt._(_root);
 	@override late final _StringsSettingsTabReceiveIt receive = _StringsSettingsTabReceiveIt._(_root);
 	@override late final _StringsSettingsTabNetworkIt network = _StringsSettingsTabNetworkIt._(_root);
@@ -266,6 +273,7 @@ class _StringsWebSharePageIt extends _StringsWebSharePageEn {
 	@override final _StringsIt _root; // ignore: unused_field
 
 	// Translations
+	@override String get autoAccept => 'Accetta automaticamente le richieste';
 	@override String get title => 'Condividi tramite link';
 	@override String get loading => 'Avvio del server...';
 	@override String get stopping => 'Arresto del server...';
@@ -460,6 +468,17 @@ class _StringsSendTabSendModesIt extends _StringsSendTabSendModesEn {
 	@override String get link => 'Condividi tramite link';
 }
 
+// Path: settingsTab.send
+class _StringsSettingsTabSendIt extends _StringsSettingsTabSendEn {
+	_StringsSettingsTabSendIt._(_StringsIt root) : this._root = root, super._(root);
+
+	@override final _StringsIt _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Invia';
+	@override String get shareViaLinkAutoAccept => 'Condividi via link: Accetta automaticamente';
+}
+
 // Path: settingsTab.general
 class _StringsSettingsTabGeneralIt extends _StringsSettingsTabGeneralEn {
 	_StringsSettingsTabGeneralIt._(_StringsIt root) : this._root = root, super._(root);
@@ -468,7 +487,7 @@ class _StringsSettingsTabGeneralIt extends _StringsSettingsTabGeneralEn {
 
 	// Translations
 	@override String get title => 'Generale';
-	@override String get brightness => 'Luminosità';
+	@override String get brightness => 'Tema';
 	@override late final _StringsSettingsTabGeneralBrightnessOptionsIt brightnessOptions = _StringsSettingsTabGeneralBrightnessOptionsIt._(_root);
 	@override String get color => 'Colore';
 	@override late final _StringsSettingsTabGeneralColorOptionsIt colorOptions = _StringsSettingsTabGeneralColorOptionsIt._(_root);
@@ -493,7 +512,7 @@ class _StringsSettingsTabReceiveIt extends _StringsSettingsTabReceiveEn {
 	@override String get quickSave => '${_root.general.quickSave}';
 	@override String get destination => 'Destinazione';
 	@override String get downloads => '(Download)';
-	@override String get saveToGallery => 'Salva i dati nella galleria';
+	@override String get saveToGallery => 'Salva i media nella galleria';
 	@override String get saveToHistory => 'Salva nella cronologia';
 }
 

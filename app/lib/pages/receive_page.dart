@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/model/persistence/color_mode.dart';
-import 'package:localsend_app/model/session_status.dart';
 import 'package:localsend_app/pages/progress_page.dart';
 import 'package:localsend_app/pages/receive_options_page.dart';
 import 'package:localsend_app/provider/favorites_provider.dart';
@@ -13,14 +13,17 @@ import 'package:localsend_app/provider/network/server/server_provider.dart';
 import 'package:localsend_app/provider/selection/selected_receiving_files_provider.dart';
 import 'package:localsend_app/provider/settings_provider.dart';
 import 'package:localsend_app/theme.dart';
+import 'package:localsend_app/util/device_type_ext.dart';
 import 'package:localsend_app/util/ip_helper.dart';
 import 'package:localsend_app/util/native/platform_check.dart';
+import 'package:localsend_app/util/native/taskbar_helper.dart';
 import 'package:localsend_app/util/ui/snackbar.dart';
 import 'package:localsend_app/widget/device_bage.dart';
 import 'package:localsend_app/widget/responsive_list_view.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:windows_taskbar/windows_taskbar.dart';
 
 class ReceivePage extends StatefulWidget {
   const ReceivePage({super.key});
@@ -38,6 +41,12 @@ class _ReceivePageState extends State<ReceivePage> with Refena {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async => _init());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    unawaited(TaskbarHelper.clearProgressBar());
   }
 
   Future<void> _init() async {
@@ -80,6 +89,12 @@ class _ReceivePageState extends State<ReceivePage> with Refena {
     final colorMode = ref.watch(settingsProvider.select((state) => state.colorMode));
 
     final senderFavoriteEntry = ref.watch(favoritesProvider).firstWhereOrNull((e) => e.fingerprint == receiveSession.sender.fingerprint);
+
+    if (receiveSession.status == SessionStatus.canceledBySender) {
+      unawaited(TaskbarHelper.setProgressBarMode(TaskbarProgressMode.error));
+    } else {
+      unawaited(TaskbarHelper.setProgressBarMode(TaskbarProgressMode.indeterminate));
+    }
 
     return WillPopScope(
       onWillPop: () async {

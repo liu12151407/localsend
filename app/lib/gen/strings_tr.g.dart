@@ -1,3 +1,9 @@
+///
+/// Generated file. Do not edit.
+///
+// coverage:ignore-file
+// ignore_for_file: type=lint
+
 part of 'strings.g.dart';
 
 // Path: <root>
@@ -494,6 +500,7 @@ class _StringsSettingsTabReceiveTr extends _StringsSettingsTabReceiveEn {
 	@override String get downloads => '(İndirilenler)';
 	@override String get saveToGallery => 'Medyayı galeriye kaydet';
 	@override String get saveToHistory => 'Geçmişe kaydet';
+	@override String get autoFinish => 'Otomatik bitir';
 }
 
 // Path: settingsTab.network

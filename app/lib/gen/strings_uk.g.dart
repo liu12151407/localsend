@@ -1,3 +1,9 @@
+///
+/// Generated file. Do not edit.
+///
+// coverage:ignore-file
+// ignore_for_file: type=lint
+
 part of 'strings.g.dart';
 
 // Path: <root>
@@ -133,6 +139,7 @@ class _StringsSettingsTabUk extends _StringsSettingsTabEn {
 	@override String get title => 'Налаштування';
 	@override late final _StringsSettingsTabGeneralUk general = _StringsSettingsTabGeneralUk._(_root);
 	@override late final _StringsSettingsTabReceiveUk receive = _StringsSettingsTabReceiveUk._(_root);
+	@override late final _StringsSettingsTabSendUk send = _StringsSettingsTabSendUk._(_root);
 	@override late final _StringsSettingsTabNetworkUk network = _StringsSettingsTabNetworkUk._(_root);
 	@override late final _StringsSettingsTabOtherUk other = _StringsSettingsTabOtherUk._(_root);
 	@override String get advancedSettings => 'Розширені налаштування';
@@ -263,6 +270,7 @@ class _StringsWebSharePageUk extends _StringsWebSharePageEn {
 	@override String get requests => 'Запити';
 	@override String get noRequests => 'Запитів поки що немає.';
 	@override String get encryption => '${_root.settingsTab.network.encryption}';
+	@override String get autoAccept => 'Автоматично приймати запити';
 	@override String get encryptionHint => 'LocalSend використовує самопідписаний сертифікат. Вам потрібно прийняти його в браузері.';
 	@override String pendingRequests({required Object n}) => 'Запити, що очікують на розгляд: ${n}';
 }
@@ -457,7 +465,7 @@ class _StringsSendTabSendModesUk extends _StringsSendTabSendModesEn {
 	// Translations
 	@override String get single => 'Один одержувач';
 	@override String get multiple => 'Кілька одержувачів';
-	@override String get link => 'Поділіться через посилання';
+	@override String get link => 'Поділитися через посилання';
 }
 
 // Path: settingsTab.general
@@ -495,6 +503,17 @@ class _StringsSettingsTabReceiveUk extends _StringsSettingsTabReceiveEn {
 	@override String get downloads => '(Завантаження)';
 	@override String get saveToGallery => 'Зберігати медіафайли до галереї';
 	@override String get saveToHistory => 'Зберігати історію';
+}
+
+// Path: settingsTab.send
+class _StringsSettingsTabSendUk extends _StringsSettingsTabSendEn {
+	_StringsSettingsTabSendUk._(_StringsUk root) : this._root = root, super._(root);
+
+	@override final _StringsUk _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Надсилання';
+	@override String get shareViaLinkAutoAccept => 'Поділитися через посилання: Приймати автоматично';
 }
 
 // Path: settingsTab.network
@@ -633,7 +652,7 @@ class _StringsDialogsEncryptionDisabledNoticeUk extends _StringsDialogsEncryptio
 
 	// Translations
 	@override String get title => 'Шифрування вимкнено';
-	@override String get content => 'Зв\'язок тепер відбувається через незашифрований протокол HTTP. Щоб використовувати HTTPS, знову ввімкніть шифрування.';
+	@override String get content => 'Зв\'язок тепер відбувається через незашифрований HTTP протокол. Щоб використовувати HTTPS, знову увімкніть шифрування.';
 }
 
 // Path: dialogs.errorDialog
@@ -821,9 +840,9 @@ class _StringsDialogsSendModeHelpUk extends _StringsDialogsSendModeHelpEn {
 
 	// Translations
 	@override String get title => 'Режими надсилання';
-	@override String get single => 'Надсилає файли одному одержувачу. Після завершення передачі файлу (-ів), виділення буде знято.';
-	@override String get multiple => 'Надсилає файли кільком одержувачам. Виділення не буде знято.';
-	@override String get link => 'Одержувачі, у яких не встановлено LocalSend, можуть завантажити вибрані файли, відкривши посилання у своєму браузері.';
+	@override String get single => 'Надсилає файли одному одержувачу. Вибірку буде очищено після завершення передачі файлів.';
+	@override String get multiple => 'Надсилає файли кільком одержувачам. Вибірку не буде очищено.';
+	@override String get link => 'Одержувачі, у яких не встановлений LocalSend, можуть завантажити вибрані файли відкривши посилання у своєму браузері.';
 }
 
 // Path: settingsTab.general.brightnessOptions

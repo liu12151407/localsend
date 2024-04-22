@@ -1,3 +1,9 @@
+///
+/// Generated file. Do not edit.
+///
+// coverage:ignore-file
+// ignore_for_file: type=lint
+
 part of 'strings.g.dart';
 
 // Path: <root>
@@ -88,7 +94,7 @@ class _StringsGeneralZhCn extends _StringsGeneralEn {
 	@override String get save => '保存';
 	@override String get unchanged => '未更改';
 	@override String get unknown => '未知';
-	@override String get noItemInClipboard => '剪贴板中没有项目';
+	@override String get noItemInClipboard => '剪贴板中没有内容';
 }
 
 // Path: receiveTab
@@ -112,15 +118,15 @@ class _StringsSendTabZhCn extends _StringsSendTabEn {
 	@override String get title => '发送';
 	@override late final _StringsSendTabSelectionZhCn selection = _StringsSendTabSelectionZhCn._(_root);
 	@override late final _StringsSendTabPickerZhCn picker = _StringsSendTabPickerZhCn._(_root);
-	@override String get shareIntentInfo => '你也可以使用你的移动设备中的“分享”功能来更简单的选择文件。';
+	@override String get shareIntentInfo => '你也可以使用你的移动设备中的“分享”功能来更简单的选择文件';
 	@override String get nearbyDevices => '附近的设备';
 	@override String get thisDevice => '这台设备';
 	@override String get scan => '扫描设备';
 	@override String get sendMode => '发送模式';
 	@override late final _StringsSendTabSendModesZhCn sendModes = _StringsSendTabSendModesZhCn._(_root);
 	@override String get sendModeHelp => '解释';
-	@override String get help => '请确保目标连接的是同一个 Wi‑Fi 网络。';
-	@override String get placeItems => '列出要分享的文件。';
+	@override String get help => '请确保目标连接的是同一个 Wi‑Fi 网络';
+	@override String get placeItems => '列出要分享的文件';
 }
 
 // Path: settingsTab
@@ -133,6 +139,7 @@ class _StringsSettingsTabZhCn extends _StringsSettingsTabEn {
 	@override String get title => '设置';
 	@override late final _StringsSettingsTabGeneralZhCn general = _StringsSettingsTabGeneralZhCn._(_root);
 	@override late final _StringsSettingsTabReceiveZhCn receive = _StringsSettingsTabReceiveZhCn._(_root);
+	@override late final _StringsSettingsTabSendZhCn send = _StringsSettingsTabSendZhCn._(_root);
 	@override late final _StringsSettingsTabNetworkZhCn network = _StringsSettingsTabNetworkZhCn._(_root);
 	@override late final _StringsSettingsTabOtherZhCn other = _StringsSettingsTabOtherZhCn._(_root);
 	@override String get advancedSettings => '高级设置';
@@ -228,8 +235,8 @@ class _StringsSendPageZhCn extends _StringsSendPageEn {
 
 	// Translations
 	@override String get waiting => '等待响应中...';
-	@override String get rejected => '对方拒绝了请求。';
-	@override String get busy => '对方正在处理另一个请求。';
+	@override String get rejected => '对方拒绝了请求';
+	@override String get busy => '对方正在处理另一个请求';
 }
 
 // Path: progressPage
@@ -255,7 +262,7 @@ class _StringsWebSharePageZhCn extends _StringsWebSharePageEn {
 	@override String get title => '分享为链接';
 	@override String get loading => '正在启动服务器...';
 	@override String get stopping => '正在停止服务器...';
-	@override String get error => '在启动服务器过程中发生了错误。';
+	@override String get error => '在启动服务器过程中发生了错误';
 	@override String openLink({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('zh'))(n,
 		one: '在浏览器中打开本链接:',
 		other: '在浏览器中打开其中的一个链接:',
@@ -263,7 +270,8 @@ class _StringsWebSharePageZhCn extends _StringsWebSharePageEn {
 	@override String get requests => '请求';
 	@override String get noRequests => '尚无请求。';
 	@override String get encryption => '${_root.settingsTab.network.encryption}';
-	@override String get encryptionHint => 'LocalSend 使用自签名证书。您需要在浏览器中接受它。';
+	@override String get autoAccept => '自动接受请求';
+	@override String get encryptionHint => 'LocalSend 使用自签名证书，您需要在浏览器中接受它。';
 	@override String pendingRequests({required Object n}) => '待处理请求: ${n}';
 }
 
@@ -388,11 +396,11 @@ class _StringsAssetPickerZhCn extends _StringsAssetPickerEn {
 	@override String get preview => '预览';
 	@override String get select => '选择';
 	@override String get emptyList => '清空列表';
-	@override String get unSupportedAssetType => '不支持的文件格式。';
+	@override String get unSupportedAssetType => '不支持的文件格式';
 	@override String get unableToAccessAll => '无法访问设备上的所有文件';
 	@override String get viewingLimitedAssetsTip => '应用程序仅能查看可访问的文件和相册。';
 	@override String get changeAccessibleLimitedAssets => '单击以更新可访问文件';
-	@override String get accessAllTip => '应用程序只能访问设备上的部分文件。转到系统设置并允许该应用访问设备上的所有媒体文件。';
+	@override String get accessAllTip => '应用程序只能访问设备上的部分文件，转到系统设置并允许该应用访问设备上的所有媒体文件。';
 	@override String get goToSystemSettings => '转到系统设置';
 	@override String get accessLimitedAssets => '继续受限访问';
 	@override String get accessiblePathName => '可访问的文件';
@@ -497,6 +505,17 @@ class _StringsSettingsTabReceiveZhCn extends _StringsSettingsTabReceiveEn {
 	@override String get saveToHistory => '保存到历史记录';
 }
 
+// Path: settingsTab.send
+class _StringsSettingsTabSendZhCn extends _StringsSettingsTabSendEn {
+	_StringsSettingsTabSendZhCn._(_StringsZhCn root) : this._root = root, super._(root);
+
+	@override final _StringsZhCn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '发送';
+	@override String get shareViaLinkAutoAccept => '通过链接分享: 自动接受';
+}
+
 // Path: settingsTab.network
 class _StringsSettingsTabNetworkZhCn extends _StringsSettingsTabNetworkEn {
 	_StringsSettingsTabNetworkZhCn._(_StringsZhCn root) : this._root = root, super._(root);
@@ -505,7 +524,7 @@ class _StringsSettingsTabNetworkZhCn extends _StringsSettingsTabNetworkEn {
 
 	// Translations
 	@override String get title => '网络';
-	@override String get needRestart => '重启服务器生效！';
+	@override String get needRestart => '重启服务器后生效！';
 	@override String get server => '服务器';
 	@override String get alias => '别名';
 	@override String get deviceType => '设备类型';
@@ -654,7 +673,7 @@ class _StringsDialogsFavoriteDialogZhCn extends _StringsDialogsFavoriteDialogEn 
 
 	// Translations
 	@override String get title => '收藏夹';
-	@override String get noFavorites => '尚未配置收藏夹。';
+	@override String get noFavorites => '尚未配置收藏夹';
 	@override String get addFavorite => '新建';
 }
 
